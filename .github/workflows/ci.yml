@@ -24,4 +24,8 @@ jobs:
       run: docker push "${{ secrets.DOCKER_USERNAME }}/flask-app:latest"
 
     - name: Deploy Container
+  
       run: docker run -d -p 5000:5000 ravindra2sf/flask-app:latest
+
+    - name: Check Containers
+      run: docker ps  
